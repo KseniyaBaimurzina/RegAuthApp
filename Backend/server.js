@@ -10,7 +10,7 @@ import connection from "./database.js";
 
 const config = dotenv.config(".env").parsed;
 var corsOptions = {
-    origin: ["http://localhost:3000", "http://localhost:3000/"],
+    origin: JSON.parse(config["ALLOWED_ORIGINS"]),
     methods: ['GET', 'PUT', 'POST', "DELETE"],
     credentials: true,
     optionsSuccessStatus: 200
