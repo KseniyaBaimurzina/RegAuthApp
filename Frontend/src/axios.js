@@ -1,6 +1,9 @@
 import axios from "axios";
+import * as dotenv from 'dotenv';
 
-const apiUrl = "http://localhost:5000";
+const config = dotenv.config(".env").parsed;
+
+const apiUrl = config["SERVER_URL"];
 const api = axios.create({
     baseURL: apiUrl,
     withCredentials: true
