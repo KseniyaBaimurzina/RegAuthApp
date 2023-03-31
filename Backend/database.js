@@ -1,10 +1,11 @@
-import { createConnection } from 'mysql';
+import { createPool } from 'mysql';
 import * as dotenv from 'dotenv';
 
 
 var config = dotenv.config(".env").parsed
 
-const connection = createConnection({
+const connection = createPool({
+    connectionLimit: 10,
     host: config["DB_HOSTNAME"],
     database: config["DB_DATABASE"],
     user: config["DB_USERNAME"],
