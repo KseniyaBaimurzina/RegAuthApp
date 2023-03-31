@@ -23,6 +23,8 @@ function CreateConnect() {
     });
 }
 
+CreateConnect();
+
 setTimeout(CreateConnect, 3600 * 1000);
 
 
